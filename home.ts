@@ -6,11 +6,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: 'index.html'
 })
 export class HomePage {
-
-  my_url: any;
-  constructor(private sanitize: DomSanitizer) {}
-  urlpaste(){
-    this.url = "https://pokeryaar-app-betaslot.azurewebsites.net/applogin/";
-    return this.sanitize.bypassSecurityTrustResourceUrl(this.my_url);
-  }
+url: any;
+    constructor(private sanitize: DomSanitizer){
+    this.url = sanitize.bypassSecurityTrustResourceUrl("https://pokeryaar-app-betaslot.azurewebsites.net/applogin/");
+    }
+  
 }
